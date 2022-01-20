@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="index.css" />
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Sketch Pad</title>
+	</head>
+
+	<body>
+		<h1>Sketch Pad</h1>
+		<!-- <h2>Select pen color</h2> -->
+		<div class="containerPen">
+			<p>Color picker:</p>
+			<div class="colorBtnContainer colorBtnSelected" id="colorPickerContainer">
+				<input type="color" id="colorPicker" class="colorBtn" />
+			</div>
+
+			<p>Rainbow:</p>
+			<div class="colorBtnContainer" id="rainbowContainer">
+				<input type="button" id="rainbow" class="colorBtn" value="" />
+			</div>
+		</div>
+		<div id="gridContainer"></div>
+		<div class="containerBtns">
+			<input id="clearBtn" type="button" value="Clear" class="button" />
+			<div class="gridOptions">
+				<p>Select grid size (number between 1 and 100):</p>
+				<div>
+					<input id="gridO" type="input" value="16" class="button" />
+					<p id="invalidWarning" class="invalidWarning">Invalid input!</p>
+				</div>
+
+				<p>x</p>
+				<p id="selection"></p>
+			</div>
+		</div>
+		<footer>
+			<p>2022</p>
+			<p>by</p>
+			<a href="https://github.com/bgtti/"
+				><img src="icons/github-brands.svg" alt="Git repository of author"
+			/></a>
+		</footer>
+
+		<script src="index.js"></script>
+	</body>
+</html>
