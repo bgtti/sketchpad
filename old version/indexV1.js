@@ -22,7 +22,7 @@ function makeGrid(){
             cell.className += ` cell-${[k + 1]}`
             row.appendChild(cell);
         }
-    };
+    }
 }
 makeGrid();
 
@@ -53,7 +53,7 @@ gridO.addEventListener('change', ()=>{
 
 
 //color picker selection
-let cells = document.querySelectorAll('.cell');
+const cells = document.querySelectorAll('.cell');
 let colorPicker = document.querySelector('#colorPicker');
 let colorPicked = colorPicker.value;
 
@@ -109,63 +109,45 @@ rainbowContainer.addEventListener('click', ()=>{
     rainbowContainer.classList.add('colorBtnSelected');
 })
 
-//painting with selected color and clear button BY HOVERING OVER GRID:
-// for (let cell of cells){
-//     cell.addEventListener('mouseover', ()=>{
-//         if (pickerSelected){
-//             cell.style.backgroundColor = colorPicked ; //uses color picker
-//         } else if (rainbowSelected){
-//             cell.style.backgroundColor = makeRGB(); //uses rainbow
-//         }
-//     }, false);
-        
-//     clearBtn.addEventListener('click', ()=>{
-//         cell.style.backgroundColor = defaultBackgroundColor; //clears drawing board
-//         }, false);
-// }
-
-
-//painting with selected color and clear button BY PRESSING MOUSE KEY DOWN:
-//this code stops working when the grid size is changed!
-//IDEA: place the for loop inside the grid creation function? see if this works.
-// https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/JavaScript
-
-//what helped me create the function bellow: https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event#examples
-
-let isDrawing = false;
-console.log(isDrawing)
-
-
-for(let cell of cells){
-    cell.addEventListener('mousedown', ()=>{
-        isDrawing = true;
-        console.log(isDrawing);
-    }, false);
-    cell.addEventListener('mouseover', ()=> {
-        if (isDrawing === true){
-            if (pickerSelected){
-                cell.style.backgroundColor = colorPicked ; //uses color picker
-            } else if (rainbowSelected){
-                cell.style.backgroundColor = makeRGB(); //uses rainbow
-            }
+//painting with selected color and clear button BY HOVERING OVER GRID
+for (let cell of cells){
+    cell.addEventListener('mouseover', ()=>{
+        if (pickerSelected){
+            cell.style.backgroundColor = colorPicked ; //uses color picker
+        } else if (rainbowSelected){
+            cell.style.backgroundColor = makeRGB(); //uses rainbow
         }
-    }, false) 
-    cell.addEventListener('mouseup', ()=>{
-            isDrawing = false;
-            console.log(isDrawing);
-        }, false);
+    }, false);
+        
     clearBtn.addEventListener('click', ()=>{
-         cell.style.backgroundColor = defaultBackgroundColor; //clears drawing board
+        cell.style.backgroundColor = defaultBackgroundColor; //clears drawing board
         }, false);
 }
 
-gridContainer.addEventListener('mouseleave', ()=>{
-    isDrawing = false;
-            console.log(isDrawing);
-})
 
 
 
+//Pen selection efect NOT IDEAL
+
+
+
+
+
+
+// function paintOver(){
+//     for(let cell of cells){
+//         cell.addEventListener('mouseover', function (){
+//             cell.style.backgroundColor = colorPicked;
+//         }, false);
+//     }
+//     console.log(colorPicked)
+// }
+// paintOver()
+
+//clear button 
+
+// // 
+// // 
 
 
 
