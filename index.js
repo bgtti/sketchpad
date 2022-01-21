@@ -162,7 +162,3 @@ colorPickerBackground.addEventListener('change', ()=> {
         gridContainer.style.backgroundColor = colorPickerBackground.value;
         console.log(colorPickerBackground);
     ;}, false)
-
-
-
-
