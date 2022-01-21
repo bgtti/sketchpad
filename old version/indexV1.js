@@ -127,37 +127,6 @@ for (let cell of cells){
 
 
 
-//Pen selection efect NOT IDEAL
-
-
-
-
-
-
-// function paintOver(){
-//     for(let cell of cells){
-//         cell.addEventListener('mouseover', function (){
-//             cell.style.backgroundColor = colorPicked;
-//         }, false);
-//     }
-//     console.log(colorPicked)
-// }
-// paintOver()
-
-//clear button 
-
-// // 
-// // 
-
-
-
-
-// if want to paint only when mouse pressed: https://stackoverflow.com/questions/18584389/listen-to-mouse-hold-event-on-website
-
-
-
-
-
 
 
 

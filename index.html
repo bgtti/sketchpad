@@ -18,29 +18,68 @@
 	<body>
 		<h1>Sketch Pad</h1>
 		<!-- <h2>Select pen color</h2> -->
-		<div class="containerPen">
-			<p>Color picker:</p>
-			<div class="colorBtnContainer colorBtnSelected" id="colorPickerContainer">
-				<input type="color" id="colorPicker" class="colorBtn" />
-			</div>
-			<p>Rainbow:</p>
-			<div class="colorBtnContainer" id="rainbowContainer">
-				<input type="button" id="rainbow" class="colorBtn" value="" />
-			</div>
-		</div>
-		<div id="gridContainer"></div>
-		<div class="containerBtns">
-			<input id="clearBtn" type="button" value="Clear" class="button" />
-			<div class="gridOptions">
-				<p>Select grid size (number between 1 and 100):</p>
-				<div>
-					<input id="gridO" type="input" value="16" class="button" />
-					<p id="invalidWarning" class="invalidWarning">Invalid input!</p>
+		<div id="outerDiv">
+			<div id="leftDiv"></div>
+			<div id="centerDiv">
+				<div id="decorationDivTop"></div>
+				<div class="containerPen">
+					<p>Color picker:</p>
+					<div
+						class="colorBtnContainer colorBtnSelected"
+						id="colorPickerContainer"
+					>
+						<input type="color" id="colorPicker" class="colorBtn" />
+					</div>
+					<p>Rainbow:</p>
+					<div class="colorBtnContainer" id="rainbowContainer">
+						<input type="button" id="rainbow" class="colorBtn" value="" />
+					</div>
 				</div>
-				<p>x</p>
-				<p id="selection"></p>
+
+				<div id="gridContainer"></div>
+				<div class="clearBtnContainer">
+					<input id="clearBtn" type="button" value="Clear" class="button" />
+				</div>
+
+				<div class="containerBtns">
+					<div class="gridOptions">
+						<p>Select grid size (number between 1 and 100):</p>
+						<div>
+							<input id="gridO" type="input" value="16" class="button" />
+							<p id="invalidWarning" class="invalidWarning">Invalid input!</p>
+						</div>
+						<p>x</p>
+						<p id="selection"></p>
+					</div>
+					<div class="showGridLinesContainer">
+						<p>Show grid lines:</p>
+						<label class="switch">
+							<input type="checkbox" checked id="showGridlines" />
+							<span class="slider round"></span>
+						</label>
+					</div>
+					<div class="setBackgroundColorContainer">
+						<p>Set background color:</p>
+						<div class="colorBtnContainer" id="colorPickerBackgroundContainer">
+							<input
+								type="color"
+								id="colorPickerBackground"
+								value="#f5f1d8"
+								class="colorBtn"
+							/>
+						</div>
+					</div>
+				</div>
+				<div id="decorationDiv">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
 			</div>
+			<div id="rightDiv"></div>
 		</div>
+
 		<footer>
 			<p>2022</p>
 			<p>by</p>
@@ -48,6 +87,11 @@
 				><img src="icons/github-brands.svg" alt="Git repository of author"
 			/></a>
 		</footer>
+		<p class="footNote">This is the latest version of the Sketch Pad.</p>
+		<p class="footNote last-p">
+			If you would like to see the first version click
+			<a href="./old version/indexV1.html">here</a>.
+		</p>
 
 		<script src="index.js"></script>
 	</body>

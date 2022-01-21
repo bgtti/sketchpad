@@ -11,8 +11,10 @@
 	--fontTitle: 'Pacifico', cursive;
 	--fontBody: 'Roboto', sans-serif;
 }
+
 body {
 	background-color: var(--cBeige);
+	background-image: url('./icons/background.png');
 }
 
 h1 {
@@ -26,6 +28,33 @@ h2 {
 	color: var(--cBlue);
 	font-size: 1.5em;
 	text-align: center;
+}
+/* Styling divs: outer, left, center, right */
+#outerDiv {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+}
+#leftDiv,
+#rightDiv {
+	width: 50px;
+}
+#leftDiv {
+	border-left: 15px solid var(--cOrange);
+	border-radius: 50%;
+}
+#centerDiv {
+	position: relative;
+}
+/* styling decoretion div top */
+#decorationDivTop {
+	height: 40px;
+	width: 40px;
+	background-color: var(--cOrange);
+	border-radius: 50%;
+	position: absolute;
+	top: -5px;
+	left: -38px;
 }
 
 /* Pen color */
@@ -49,6 +78,7 @@ p {
 }
 .colorBtnSelected {
 	background-color: rgb(53, 53, 53);
+	background-color: var(--cBlue);
 }
 .colorBtn {
 	border: none;
@@ -58,6 +88,7 @@ p {
 
 #colorPicker {
 	background-color: rgba(76, 0, 130, 0);
+	cursor: pointer;
 }
 
 #rainbow {
@@ -75,6 +106,7 @@ p {
 	width: 56px;
 	height: 22px;
 	border: solid 1px gray;
+	cursor: pointer;
 }
 
 /* Grid */
@@ -88,6 +120,12 @@ p {
 	display: flex;
 	justify-content: space-evenly;
 }
+@media only screen and (min-width: 800px) {
+	#gridContainer {
+		height: 600px;
+		width: 600px;
+	}
+}
 .row {
 	flex: 100 100 100%;
 	display: flex;
@@ -98,35 +136,60 @@ p {
 	min-height: 1px;
 	min-width: 1px;
 	flex: 100 100 100%;
-	border-left: 1px solid rgb(192, 192, 192);
-	border-bottom: 1px solid rgb(192, 192, 192);
 	cursor: crosshair;
 	background-color: #ffffff00;
 }
+.cellBorder {
+	border-left: 1px solid rgb(192, 192, 192);
+	border-bottom: 1px solid rgb(192, 192, 192);
+}
 
 /* Clear Btn */
+.button {
+	width: 60px;
+	height: 25px;
+	padding: 0;
+	margin: 0;
+	border: 3px solid var(--cBlue);
+	border-radius: 10%;
+	background-color: var(--cBeige);
+}
+.clearBtnContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px 0 0 0;
+}
+#clearBtn {
+	text-align: center;
+	font-size: 1em;
+	width: 100px;
+	height: 30px;
+	cursor: pointer;
+}
+#clearBtn:hover {
+	background-color: var(--cOrange);
+	font-weight: bold;
+}
+
+/* container buttons */
 .containerBtns {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	margin: 10px 0;
-}
-.button {
-	width: 60px;
-	height: 25px;
-	padding: 0;
-	margin: 0;
-	border: 2px solid;
-	border-radius: 10%;
-	background-color: var(--cBeige);
+
+	width: 350px;
+	margin: 10px auto;
 }
 
-#clearBtn {
-	margin: 0 auto;
+@media only screen and (min-width: 800px) {
+	.containerBtns {
+		width: 600px;
+	}
 }
-
-/* grid options */
+/* grid size options */
 .gridOptions {
 	display: flex;
 	justify-content: center;
@@ -137,6 +200,7 @@ p {
 }
 #gridO {
 	text-align: center;
+	font-size: 1em;
 }
 .invalidWarning {
 	color: red;
@@ -149,6 +213,101 @@ p {
 }
 .invalid {
 	border-color: red;
+}
+
+/* Show grid lines: from https://www.w3schools.com/howto/howto_css_switch.asp */
+.showGridLinesContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	margin: 10px 0;
+}
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 55px;
+	height: 23px;
+}
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+.slider:before {
+	position: absolute;
+	content: '';
+	height: 20px;
+	width: 20px;
+	left: 4px;
+	bottom: 2px;
+	background-color: #ffffff;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .slider {
+	background-color: var(--cBlue);
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px --cBlue;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+/* Set background color */
+.setBackgroundColorContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	margin: 10px 0;
+}
+#colorPickerBackgroundContainer {
+	background-color: var(--cBlue);
+	border-radius: 15%;
+}
+#colorPickerBackground {
+	background-color: rgba(238, 130, 238, 0);
+	cursor: pointer;
+}
+
+/* Decoration divs */
+#decorationDiv {
+	display: flex;
+	width: fit-content;
+	position: relative;
+	top: -105px;
+	left: -140px;
+}
+#decorationDiv div {
+	width: 50px;
+	height: 50px;
+	background-color: var(--cBlue);
+	transform: rotate(45deg);
 }
 
 /* Footer */
@@ -171,4 +330,20 @@ footer img {
 }
 footer img:hover {
 	transform: scale(2) rotateZ(360deg);
+}
+/* Foot note */
+.footNote {
+	text-align: center;
+	font-size: 0.7em;
+	text-decoration: none;
+	color: #808080;
+	font-style: italic;
+}
+a {
+	text-decoration: none;
+	text-decoration: underline;
+	color: #808080;
+}
+.last-p {
+	margin-bottom: 5px;
 }
