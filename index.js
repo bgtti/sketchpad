@@ -93,6 +93,13 @@ function makeGrid(){
     for(let cell of cells){ //loop to add event listeners to each grid cell
         cell.addEventListener('mousedown', ()=>{
             isDrawing = true;
+            if (isDrawing === true){
+                if (pickerSelected){
+                    cell.style.backgroundColor = colorPicked ; //uses color picker
+                } else if (rainbowSelected){
+                    cell.style.backgroundColor = makeRGB(); //uses rainbow
+                }
+            }     
         }, false);
         cell.addEventListener('mouseover', ()=> {
             if (isDrawing === true){
