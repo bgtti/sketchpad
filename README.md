@@ -1,4 +1,5 @@
 # sketchpad
+Live preview at: https://bgtti.github.io/sketchpad/
 
 Part of the Odin Project "Etch-a-Sketch"
 
