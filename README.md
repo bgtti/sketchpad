@@ -3,7 +3,7 @@ Live preview at: https://bgtti.github.io/sketchpad/
 
 Part of the Odin Project "Etch-a-Sketch"
 
-The user can use the sketchpad to create pixel are:
+The user can use the sketchpad to create pixel art:
 
 - The grids are inserted through a for-loop which creates a given number of divs inside a container-div in the html.
 - The user can choose a pen color from a color picker or click the rainbow button to use randomly generated RGB colors.
