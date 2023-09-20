@@ -131,8 +131,7 @@ function makeGrid(){
             cell.classList.add('cellBorder');
         } else {
             cell.classList.remove('cellBorder') 
-        }
-        
+        }   
     },false)
     }
 }
